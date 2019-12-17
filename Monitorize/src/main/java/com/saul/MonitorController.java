@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 import com.saul.model.User;
 import com.saul.repo.*;
 
-import monitor.Status;
 
 @RestController
 public class MonitorController {

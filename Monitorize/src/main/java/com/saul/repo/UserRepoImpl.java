@@ -13,7 +13,7 @@ import com.saul.model.User;
 
 @Repository
 @Transactional(readOnly = true)
-public class UserRepoImp implements UserRepoCustom{
+public class UserRepoImpl implements UserRepoCustom{
 
 	 @PersistenceContext
 	    EntityManager entityManager;
