@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
@@ -32,9 +33,17 @@ public class MonitorController {
 	    p.setDescripcion(desc);
 	    repoUsuarios.save(p);
 	  }
+	  
+	  @PostMapping("/createJsonUser")
+	  public User createJsonUser(@RequestBody User usr) {
+	   
+	    repoUsuarios.save(usr);
+	    
+	    return usr;
+	  }
 	 
-	  @RequestMapping("/listaUsers")
-	  @GetMapping
+
+	  @GetMapping("/listaUsers")
 	  public List<User> listaUsuarios() {
 	    
 	   return repoUsuarios.findAll();
